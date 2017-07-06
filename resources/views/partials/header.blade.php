@@ -5,6 +5,7 @@
         <ul class="nav navbar-nav">
           <li><a href="{{ route('blog.index')}}">Blog</a></li>
           <li><a href="{{ route('other.about')}}">About</a></li>
+          <li><a href="{{ route('admin.index')}}">Admin</a></li>
         </ul>
       </div>
     </div>
