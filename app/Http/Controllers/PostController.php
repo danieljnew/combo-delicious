@@ -15,12 +15,12 @@ class PostController extends Controller
 {
     public function getIndex()
     {
-      $posts = Post::all();
+      $posts = Post::orderby('created_at', 'desc')->get();
       return view('blog.index', ['posts' => $posts]);
     }
     public function getAdminIndex()
     {
-      $posts = Post::all();
+      $posts = Post::orderby('title', 'desc')->get();
       return view('admin.index', ['posts' => $posts]);
     }
     public function getPost($id)
