@@ -1,9 +1,9 @@
 .quote {
-    font: 400 72px "Arizonia", Helvetica, sans-serif;
-    color: #F4645F;
+    font: 400 72px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #008B8B;
     text-align: center;
 }
 
 .post-title {
-    color: #F4645F;
+    color: #008B8B;
 }
