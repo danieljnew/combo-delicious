@@ -21,6 +21,12 @@
     </div>
     <hr>
   @endforeach
+  <div class="row">
+    <div class="col-md-12 text-center">
+      {{ $posts->links() }}
+    </div>
+
+  </div>
 
 
 @endsection
