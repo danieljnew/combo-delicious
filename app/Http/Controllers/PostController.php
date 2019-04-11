@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Like;
 use App\Tag;
+use Auth;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -54,12 +55,16 @@ class PostController extends Controller
         'title' => 'required|min:5',
         'content' => 'required|min:10'
       ]);
+      $user = Auth::user();
+      if (!$user) {
+        return redirect()->back();
+      }
       $post = new Post();
       $post = new Post([
           'title' => $request->input('title'),
           'content' => $request->input('content')
       ]);
-      $post->save();
+      $user->posts()->save($post);
       $post->tags()->attach($request->input('tags') === null ? [] : $request->input('tags'));
       return redirect()->route('admin.index')->with('info', 'Post created, Title is:'
       . $request->input('title'));
