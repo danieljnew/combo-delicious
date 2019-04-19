@@ -57,7 +57,7 @@ class PostController extends Controller
       ]);
       $user = Auth::user();
       if (!$user) {
-        return redirect()->back();
+        return redirect()->route('admin.create')->with('info', 'Must be logged in to create a post');
       }
       $post = new Post();
       $post = new Post([
